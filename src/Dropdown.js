@@ -89,7 +89,6 @@ function Dropdown({
   const updateValue = useCallback((val) => {
     const newValue = findSelected(options, val, matcher);
     if (newValue) {
-      fireChangeEvent(newValue);
       setSelected(newValue);
     }
   }, [options, matcher]);
