@@ -32284,8 +32284,11 @@ function Dropdown(_ref) {
 
   var updateValue = (0, _react.useCallback)(function (val) {
     var newValue = (0, _helpers.findSelected)(options, val, matcher);
-    fireChangeEvent(newValue);
-    setSelected(newValue);
+
+    if (newValue) {
+      fireChangeEvent(newValue);
+      setSelected(newValue);
+    }
   }, [options, matcher]);
   (0, _react.useEffect)(function () {
     return updateValue(value);
