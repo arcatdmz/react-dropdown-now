@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import React, { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import get from 'lodash/get';
 
@@ -89,7 +89,6 @@ function Dropdown({
   const updateValue = useCallback((val) => {
     const newValue = findSelected(options, val, matcher);
     if (newValue) {
-      fireChangeEvent(newValue);
       setSelected(newValue);
     }
   }, [options, matcher]);
